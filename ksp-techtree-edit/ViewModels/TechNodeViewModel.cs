@@ -84,8 +84,7 @@ namespace ksp_techtree_edit.ViewModels
             }
         }
 
-        [ItemsSource(typeof(IconEnumItemsSource))]
-        public IconsEnum Icon
+        public string Icon
         {
             get
             {
