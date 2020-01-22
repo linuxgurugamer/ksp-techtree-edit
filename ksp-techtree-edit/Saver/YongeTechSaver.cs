@@ -39,7 +39,7 @@ namespace ksp_techtree_edit.Saver
                       SaveAttribute(new KeyValuePair<string, string>("description", node.Description)).
                       SaveAttribute(new KeyValuePair<string, string>("cost", node.Cost.ToString(CultureInfo.InvariantCulture))).
                       SavePosition(node.Pos.X, node.Pos.Y, node.Zlayer).
-                      SaveAttribute(new KeyValuePair<string, string>("icon", IconStringConverter.IconString[(int)node.Icon])).
+                      SaveAttribute(new KeyValuePair<string, string>("icon", node.Icon)).
                       SaveAttribute(new KeyValuePair<string, string>("anyParent", node.AnyToUnlock.ToString())).
                       SaveAttribute(new KeyValuePair<string, string>("hideEmpty", node.HideEmpty.ToString())).
                       SaveAttribute(new KeyValuePair<string, string>("hideIfNoBranchParts", node.HideIfNoBranchParts.ToString())).

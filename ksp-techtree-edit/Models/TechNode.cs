@@ -28,7 +28,7 @@ namespace ksp_techtree_edit.Models
 		public string Id { get; set; }
 
         
-		public IconsEnum Icon { get; set; }
+		public string Icon { get; set; }
 		public bool AnyToUnlock { get; set; }
 		public bool HideEmpty { get; set; }
 		public bool HideIfNoBranchParts { get; set; }
@@ -56,7 +56,7 @@ namespace ksp_techtree_edit.Models
 			Pos = new Point(0, 0);
 			Zlayer = 0;
 			Id = GenerateTechId();
-			Icon = IconsEnum.RDicon_generic;
+			Icon = "RDicon_generic";
             AnyToUnlock = false;
 			HideEmpty = false;
 			HideIfNoBranchParts = false;
@@ -118,12 +118,7 @@ namespace ksp_techtree_edit.Models
 
             if (v.ContainsKey("icon"))
             {
-                IconsEnum icon;
-                if (!Enum.TryParse(v["icon"].First(), true, out icon))
-                {
-                    icon = IconsEnum.RDicon_generic;
-                }
-                Icon = icon;
+                Icon = v["icon"].First();
             }
 
             if (v.ContainsKey("scale")) {

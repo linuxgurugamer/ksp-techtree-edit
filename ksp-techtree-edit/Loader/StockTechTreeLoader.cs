@@ -95,16 +95,7 @@ namespace ksp_techtree_edit.Loader
 
             if (v.ContainsKey("icon"))
             {
-                String iconString = v["icon"].First();
-                int id = Array.FindIndex(IconStringConverter.IconString, row => row == iconString);
-                if (id != -1)
-                {
-                    newNode.Icon = (IconsEnum)id;
-                }
-                else
-                {
-                    newNode.Icon = IconsEnum.RDicon_generic;
-                }
+                newNode.Icon = v["icon"].First();
             }
 
             if (v.ContainsKey("scale"))
@@ -219,10 +210,5 @@ namespace ksp_techtree_edit.Loader
                 }
             }
         }
-
-
-
-
-
     }
 }
