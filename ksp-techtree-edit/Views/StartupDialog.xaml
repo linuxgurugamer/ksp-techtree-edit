@@ -31,8 +31,8 @@
             <Button Content="Find KSP Folder..." HorizontalAlignment="Center" Width="200" Click="StartupDialog_SetKSPFolder" />
 			<Label Grid.Row="1" Content="{Binding Source={x:Static properties:Settings.Default}, Path=KspPath}" ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Content}" MinHeight="14" HorizontalAlignment="Center"/>
 
-            <Button Grid.Row="3" Content="(KSP1.04) Load StockTechtree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_LoadStockTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
-            <Button Grid.Row="4" Content="(KSP1.04) Load YongeTechtree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_LoadYongeTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
+            <Button Grid.Row="3" Content="(KSP1.8x) Load StockTechtree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_LoadStockTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
+            <Button Grid.Row="4" Content="(KSP1.8x) Load YongeTechtree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_LoadYongeTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
             <Button Grid.Row="7" Content="New Stock Tree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_NewStockTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
             <Button Grid.Row="6" Content="New Blank Tree" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="200" Click="StartupDialog_NewBlankTree" Padding="5" IsEnabled="{Binding CanLoad}"/>
 		</Grid>

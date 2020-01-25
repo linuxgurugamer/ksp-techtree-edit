@@ -1,0 +1,2 @@
+Linuxgurugamer
+	Added support for Localization, currently only supports en-us dictionary

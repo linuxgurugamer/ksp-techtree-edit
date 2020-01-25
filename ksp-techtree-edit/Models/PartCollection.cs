@@ -75,6 +75,69 @@ namespace ksp_techtree_edit.Models
 			return partlist;
 		}
 
+		public void LoadDictionary()
+		{
+			var dict = TechTreeViewModel.localizationDictionary;
+			foreach (var file in Directory.GetFiles("*.cfg", SearchOption.AllDirectories))				
+			{
+				//Logger.Log("file: " + file.FullName);
+				string[] lines = System.IO.File.ReadAllLines(file.FullName);
+				bool lfile = false;
+				bool en_us = false;
+				int brace = 0;
+#if true
+				foreach (string line in lines)
+				{
+
+					if (line.Contains("Localization"))
+					{
+						lfile = true;
+						//Logger.Log("Localization found");
+					}
+					if (lfile)
+					{
+						if (line.Contains("en-us"))
+						{
+							en_us = true;
+							//Logger.Log("en-us found");
+						}
+						if (line.Contains("{") && en_us)
+						{
+							brace++;
+							//Logger.Log("brace found");
+						}
+						if (line.Contains("}"))
+						{
+							brace--;
+							if (en_us)
+								en_us = false;
+						}
+						if (en_us)
+						{
+							if (line.Contains('='))
+							{
+								var pieces = line.Split(new[] { '=' }, 2);
+
+								if (dict.ContainsKey(pieces[0].Trim()))
+								{
+									Logger.Log("Duplicated key: " + pieces[0]);
+								}
+								else
+									dict.Add(pieces[0].Trim(), pieces[1].Trim());
+							}
+						}
+					}
+				}
+#endif
+			}
+
+#if false
+			foreach (var d in dict)
+			{
+				Logger.Log("key: [" + d.Key + "] = " + d.Value);
+			}
+#endif
+		}
 		#endregion Methods
 
 		#region Interface Members

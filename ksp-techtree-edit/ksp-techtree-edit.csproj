@@ -68,10 +68,6 @@
       <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KerbalParser, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\KerbalParser\bin\Debug\KerbalParser.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -271,6 +267,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="stocknodes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KerbalParser\KerbalParser.csproj">
+      <Project>{1332eef3-e313-4844-afb4-b3dcd0b4a457}</Project>
+      <Name>KerbalParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

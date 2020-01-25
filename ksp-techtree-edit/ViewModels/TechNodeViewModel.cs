@@ -40,9 +40,35 @@ namespace ksp_techtree_edit.ViewModels
             }
         }
 
-        public string Title
+        static public string GetText(string key)
+        {
+            if (key.StartsWith("#"))
+            {
+                var pieces = key.Split(new[] { ' ' }, 2);
+                //Logger.Log("Title, pieces[0]: [" + pieces[0].Trim() + "]");
+                //Logger.Log("Dictionary size: " + TechTreeViewModel.dictionary.Count);
+                if (TechTreeViewModel.localizationDictionary.ContainsKey(pieces[0].Trim()))
+                {
+
+                    string data = "";
+                    TechTreeViewModel.localizationDictionary.TryGetValue(pieces[0], out data);
+                    //Logger.Log("data: " + data);
+                    return data;
+                }
+            }
+            return key;
+        }
+        public string L_Title
         {
             get { return _techNode.Title; }
+        }
+        public string L_Description
+        {
+            get { return _techNode.Description; }
+        }
+        public string Title
+        {
+            get { return GetText(_techNode.Title); }
             set
             {
                 if (_techNode.Title == value) return;
@@ -53,7 +79,7 @@ namespace ksp_techtree_edit.ViewModels
 
         public string Description
         {
-            get { return _techNode.Description; }
+            get { return GetText(_techNode.Description); }
             set
             {
                 if (_techNode.Description == value) return;
@@ -143,7 +169,7 @@ namespace ksp_techtree_edit.ViewModels
             }
         }
 
-        
+
 
         [Browsable(false)]
         public int Zlayer
@@ -166,7 +192,7 @@ namespace ksp_techtree_edit.ViewModels
 
         [Browsable(false)]
         public int Width { get; set; }
-        [Browsable(false)] 
+        [Browsable(false)]
         public int Height { get; set; }
 
         [Browsable(false)]
@@ -206,47 +232,47 @@ namespace ksp_techtree_edit.ViewModels
             get { return _parts; }
             set { _parts = value; }
         }
-       
-		#endregion Data Members
 
-		#region Constructors
+        #endregion Data Members
 
-		public TechNodeViewModel()
-		{
-			Width = 40;
-			Height = 40;
+        #region Constructors
 
-			TechNode = new TechNode();
-		}
+        public TechNodeViewModel()
+        {
+            Width = 40;
+            Height = 40;
 
-		#endregion Constructors
+            TechNode = new TechNode();
+        }
 
-		#region Helper Methods
+        #endregion Constructors
 
-		public void RemovePart(PartViewModel part)
-		{
-			Parts.Remove(part);
-			TechNode.Parts.Remove(part.PartName);
-		}
+        #region Helper Methods
 
-		public void AddPart(PartViewModel part)
-		{
-			Parts.Add(part);
-			TechNode.Parts.Add(part.PartName);
-		}
+        public void RemovePart(PartViewModel part)
+        {
+            Parts.Remove(part);
+            TechNode.Parts.Remove(part.PartName);
+        }
 
-		public void RemoveParent(TechNodeViewModel parent)
-		{
-			Parents.Remove(parent);
-			TechNode.Parents.Remove(parent.TechNode);
-		}
+        public void AddPart(PartViewModel part)
+        {
+            Parts.Add(part);
+            TechNode.Parts.Add(part.PartName);
+        }
 
-		public void AddParent(TechNodeViewModel parent)
-		{
-			Parents.Add(parent);
-			TechNode.Parents.Add(parent.TechNode);
-		}
+        public void RemoveParent(TechNodeViewModel parent)
+        {
+            Parents.Remove(parent);
+            TechNode.Parents.Remove(parent.TechNode);
+        }
 
-		#endregion Helper Methods
-	}
+        public void AddParent(TechNodeViewModel parent)
+        {
+            Parents.Add(parent);
+            TechNode.Parents.Add(parent.TechNode);
+        }
+
+        #endregion Helper Methods
+    }
 }

@@ -46,7 +46,7 @@ namespace ksp_techtree_edit.ViewModels
 		{
 			var partCollection = new PartCollection(path);
 			partCollection.LoadParts();
-
+			partCollection.LoadDictionary();
 			foreach (var part in partCollection)
 			{
 				var partViewModel = new PartViewModel(part);

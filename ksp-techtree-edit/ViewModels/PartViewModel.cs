@@ -22,7 +22,7 @@ namespace ksp_techtree_edit.ViewModels
 
 		public string ComposedTitle
 		{
-			get { return String.Format("{0} - {1}", ModName, Title); }
+			get { return String.Format("{0} - {1}", ModName, TechNodeViewModel.GetText(Title)); }
 		}
 
 		#region Model Wrappers
@@ -56,7 +56,7 @@ namespace ksp_techtree_edit.ViewModels
 
 		public string Title
 		{
-			get { return _part.Title; }
+			get { return TechNodeViewModel.GetText( _part.Title); }
 			set
 			{
 				if (_part.Title == value) return;

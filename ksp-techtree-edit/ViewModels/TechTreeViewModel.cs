@@ -20,6 +20,8 @@ namespace ksp_techtree_edit.ViewModels
 		private PartCollectionViewModel _partCollectionViewModel;
 		private Point _mousePosition;
 
+		public static Dictionary<string, string> localizationDictionary = new Dictionary<string, string>();
+
 		#endregion Private
 
 		#region Public
@@ -74,6 +76,8 @@ namespace ksp_techtree_edit.ViewModels
 			Connections = new ObservableCollection<ConnectionViewModel>();
 			TechTree = new ObservableCollection<TechNodeViewModel>();
 			StockNodes = Resources.stocknodes.Split( new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+			
 		}
 
 		#endregion Constructors

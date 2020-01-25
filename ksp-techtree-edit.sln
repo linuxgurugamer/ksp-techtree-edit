@@ -1,11 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ksp-techtree-edit", "ksp-techtree-edit\ksp-techtree-edit.csproj", "{4119C3CE-8293-4AB8-BF0E-35C753F71A11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1332EEF3-E313-4844-AFB4-B3DCD0B4A457} = {1332EEF3-E313-4844-AFB4-B3DCD0B4A457}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalParser", "KerbalParser\KerbalParser.csproj", "{1332EEF3-E313-4844-AFB4-B3DCD0B4A457}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{988013CE-7FEA-44C2-B077-ACB9F91D71AE}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E7C4C40-3534-4D53-9915-55612239AB33}
 	EndGlobalSection
 EndGlobal
