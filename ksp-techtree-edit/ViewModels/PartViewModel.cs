@@ -64,7 +64,6 @@ namespace ksp_techtree_edit.ViewModels
 				OnPropertyChanged();
 			}
 		}
-
 		public string Description
 		{
 			get { return _part.Description; }

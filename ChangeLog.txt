@@ -5,3 +5,7 @@
 		Updated text which referred to KSP 1.04 to KSP
 		Added installer project
 	
+0.5.1
+	Added more characters to node display
+	Added second line to node display
+	Slightly improved error message when badly formatted cfg file is read

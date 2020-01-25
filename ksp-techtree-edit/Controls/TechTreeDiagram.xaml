@@ -72,7 +72,7 @@
 							<ControlTemplate>
 								<Grid>
 									<Rectangle x:Name="NodeBackground" Fill="CadetBlue" />
-									<Label Content="{Binding Title[0]}"
+									<Label Content="{Binding TitleAbbr}"
 													HorizontalAlignment="Center"
 													VerticalAlignment="Center"/>
 									<Rectangle Fill="Transparent" Cursor="Hand"/>

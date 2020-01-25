@@ -45,14 +45,9 @@ namespace ksp_techtree_edit.ViewModels
             if (key.StartsWith("#"))
             {
                 var pieces = key.Split(new[] { ' ' }, 2);
-                //Logger.Log("Title, pieces[0]: [" + pieces[0].Trim() + "]");
-                //Logger.Log("Dictionary size: " + TechTreeViewModel.dictionary.Count);
                 if (TechTreeViewModel.localizationDictionary.ContainsKey(pieces[0].Trim()))
                 {
-
-                    string data = "";
-                    TechTreeViewModel.localizationDictionary.TryGetValue(pieces[0], out data);
-                    //Logger.Log("data: " + data);
+                    TechTreeViewModel.localizationDictionary.TryGetValue(pieces[0], out string data);
                     return data;
                 }
             }
@@ -76,7 +71,34 @@ namespace ksp_techtree_edit.ViewModels
                 OnPropertyChanged();
             }
         }
-
+        public string TitleAbbr {
+            get {
+                string str = "";
+                int idx = 0;
+                int cnt = 0;
+                for (int i = 0; i < Title.Length; i++)
+                    if (Char.IsUpper(Title[i]))
+                    {
+                        idx = i+1;
+                        str += Title[i];
+                        if (cnt == 0)
+                        {
+                            for (int i1 = idx; i1 < idx + 3; i1++)
+                            {
+                                if (Char.IsUpper(Title[i1]))
+                                    break;
+                                str += Title[i1];
+                            }
+                            str += "\n";
+                            cnt = 1;
+                        }
+                    }
+                for (int i = idx; i < idx +3; i++)
+                    str += Title[i];
+                return str;
+                return Title.Substring(0, 2); 
+            } 
+        }
         public string Description
         {
             get { return GetText(_techNode.Description); }
