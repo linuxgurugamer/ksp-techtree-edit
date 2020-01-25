@@ -1,2 +1,7 @@
-Linuxgurugamer
-	Added support for Localization, currently only supports en-us dictionary
+0.2.5
+	Update by Linuxgurugamer
+		Added support for Localization, currently only supports en-us dictionary
+		Corrected window title
+		Updated text which referred to KSP 1.04 to KSP
+		Added installer project
+	

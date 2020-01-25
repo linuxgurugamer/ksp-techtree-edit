@@ -7,7 +7,7 @@
 		xmlns:controls="clr-namespace:ksp_techtree_edit.Controls"
 		xmlns:viewModels="clr-namespace:ksp_techtree_edit.ViewModels"
 		mc:Ignorable="d" x:Class="ksp_techtree_edit.Views.MainWindow"
-        Title="KSP Tech Tree Edit for KPS 1.04"
+        Title="KSP Tech Tree Edit for KSP 1.8"
 		MinHeight="800" MinWidth="1280" WindowState="Maximized"
         Loaded="MainWindow_OnLoaded"
 		Closed="MainWindow_OnClosed"

@@ -12,9 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalParser", "KerbalParse
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{988013CE-7FEA-44C2-B077-ACB9F91D71AE}"
 	ProjectSection(SolutionItems) = preProject
+		ChangeLog.txt = ChangeLog.txt
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "KSP-TechTreeEditor", "KSP-TechTreeEditor\KSP-TechTreeEditor.vdproj", "{D0F0A503-DC70-4F4E-A98E-CF653BD11D41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +33,9 @@ Global
 		{1332EEF3-E313-4844-AFB4-B3DCD0B4A457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1332EEF3-E313-4844-AFB4-B3DCD0B4A457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1332EEF3-E313-4844-AFB4-B3DCD0B4A457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F0A503-DC70-4F4E-A98E-CF653BD11D41}.Debug|Any CPU.ActiveCfg = Debug
+		{D0F0A503-DC70-4F4E-A98E-CF653BD11D41}.Release|Any CPU.ActiveCfg = Release
+		{D0F0A503-DC70-4F4E-A98E-CF653BD11D41}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
