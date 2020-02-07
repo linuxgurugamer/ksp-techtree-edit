@@ -3,7 +3,7 @@ TED - KSP Tech Tree Editor - v0.3
 
 Description
 -----
-An external, visual, point-and-click tool for editing and creating custom tech trees for Kerbal Space Program. The tool generates the text files used by KSP 1.04 and the YongeTech plugins.
+An external, visual, point-and-click tool for editing and creating custom tech trees for Kerbal Space Program. The tool generates the text files used by KSP 1.04+ and the YongeTech plugins.
 
 Installation
 -----

@@ -9,3 +9,6 @@
 	Added more characters to node display
 	Added second line to node display
 	Slightly improved error message when badly formatted cfg file is read
+
+0.5.2
+	Fixed description not always getting localized

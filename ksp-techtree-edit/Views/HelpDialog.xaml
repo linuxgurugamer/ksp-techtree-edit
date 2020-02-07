@@ -27,7 +27,7 @@
                 <Paragraph>
                     This KspEditorTechtree is based of
                     <Hyperlink RequestNavigate="HelpDialog_RequestNavigate" NavigateUri="https://github.com/jcalero/ksp-techtree-edit">TED - KSP Tech Tree Editor v0.2.4</Hyperlink>. 
-                    This version is is only compatible with the new techtree format for KSP 1.04 and YongeTech plugin.
+                    This version is is only compatible with the new techtree format for KSP 1.04 and newer, and YongeTech plugin.
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>

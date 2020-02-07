@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using KerbalParser;
 using ksp_techtree_edit.Util;
+using ksp_techtree_edit.ViewModels;
 
 namespace ksp_techtree_edit.Models
 {
@@ -57,8 +58,24 @@ namespace ksp_techtree_edit.Models
         {
             PartName = p.PartName;
             Title = p.Title;
-            Description = p.Description;
-            Cost = p.Cost;
+
+			if (p.Description != null && p.Description != "" && TechTreeViewModel.localizationDictionary != null)
+			{
+				string str = p.Description.Trim();
+				if (str.IndexOf(' ') >= 0)
+					str = str.Substring(0, str.IndexOf(' '));
+				if (TechTreeViewModel.localizationDictionary.ContainsKey(str))
+				{
+					TechTreeViewModel.localizationDictionary.TryGetValue(str, out string data);
+					Description = data;
+				}
+				else
+					Description = str;
+			}
+			else
+				Description = p.Description;
+
+			Cost = p.Cost;
             TechRequired = p.TechRequired;
             Category = p.Category;
             Icon = p.Icon;
@@ -66,9 +83,9 @@ namespace ksp_techtree_edit.Models
             _fileName = p.FileName;
         }
 
-        #endregion Constructors
+#endregion Constructors
 
-        #region Members
+#region Members
 
         public void PopulateFromSource(KerbalNode node)
 		{
@@ -124,6 +141,6 @@ namespace ksp_techtree_edit.Models
 			return "Unknown";
 		}
 
-		#endregion Members
+#endregion Members
 	}
 }

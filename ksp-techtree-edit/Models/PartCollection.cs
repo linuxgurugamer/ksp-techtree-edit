@@ -92,14 +92,14 @@ namespace ksp_techtree_edit.Models
 					if (line.Contains("Localization"))
 					{
 						lfile = true;
-						//Logger.Log("Localization found");
+						Logger.Log("Localization found");
 					}
 					if (lfile)
 					{
 						if (line.Contains("en-us"))
 						{
 							en_us = true;
-							//Logger.Log("en-us found");
+							Logger.Log("en-us found");
 						}
 						if (line.Contains("{") && en_us)
 						{
@@ -120,7 +120,7 @@ namespace ksp_techtree_edit.Models
 
 								if (dict.ContainsKey(pieces[0].Trim()))
 								{
-									Logger.Log("Duplicated key: " + pieces[0]);
+									Logger.Log("Duplicated key: " + pieces[0].Trim());
 								}
 								else
 									dict.Add(pieces[0].Trim(), pieces[1].Trim());
