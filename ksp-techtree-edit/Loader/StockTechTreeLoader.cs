@@ -191,7 +191,7 @@ namespace ksp_techtree_edit.Loader
                 }
                 catch (Exception e)
                 {
-                    Logger.Error("PartLoader: Error while storing part \"{0}\" " + "({1}) into PartCollection - {2}", part.PartName, part.FileName, e.Message);
+                    Logger.Error("StockTechTreeLoader.PopulateParts: " + "PartLoader: Error while storing part \"{0}\" " + "({1}) into PartCollection - {2}", part.PartName, part.FileName, e.Message);
                 }
             }
 

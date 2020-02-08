@@ -49,6 +49,7 @@ namespace ksp_techtree_edit.Models
 			var filter = new List<string> { "PART" };
 			var parser = new Parser(filter, false, true);
 			foreach (var file in Directory.GetFiles("*.cfg", SearchOption.AllDirectories))
+				if (!file.FullName.Contains("zDeprecated"))
 			{
 				OnProgress();
 				KerbalConfig parts = null;
@@ -58,7 +59,7 @@ namespace ksp_techtree_edit.Models
 				}
 				catch (Exception e)
 				{
-					Logger.Error(e.Message);
+					Logger.Error("PartCollection.LoadParts: " +e.Message);
 				}
 				if (parts == null || parts.Count < 1) continue;
 				foreach (var p in parts.Where(p => !partlist.Contains(p) && p.Name == "PART"))
@@ -78,8 +79,9 @@ namespace ksp_techtree_edit.Models
 		public void LoadDictionary()
 		{
 			var dict = TechTreeViewModel.localizationDictionary;
-			foreach (var file in Directory.GetFiles("*.cfg", SearchOption.AllDirectories))				
-			{
+			foreach (var file in Directory.GetFiles("*.cfg", SearchOption.AllDirectories))
+				if (!file.FullName.Contains("zDeprecated"))
+				{
 				//Logger.Log("file: " + file.FullName);
 				string[] lines = System.IO.File.ReadAllLines(file.FullName);
 				bool lfile = false;
@@ -92,14 +94,14 @@ namespace ksp_techtree_edit.Models
 					if (line.Contains("Localization"))
 					{
 						lfile = true;
-						Logger.Log("Localization found");
+						//Logger.Log("Localization found");
 					}
 					if (lfile)
 					{
 						if (line.Contains("en-us"))
 						{
 							en_us = true;
-							Logger.Log("en-us found");
+							//Logger.Log("en-us found");
 						}
 						if (line.Contains("{") && en_us)
 						{

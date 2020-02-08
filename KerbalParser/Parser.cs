@@ -115,6 +115,7 @@ namespace KerbalParser
 			catch (ParseErrorException e)
 			{
 				throw new ParseErrorException(
+					"Parser.ParseConfig: " +
 					e.Message + ": File: " +
 					kerbalConfig.FileName);
 			}

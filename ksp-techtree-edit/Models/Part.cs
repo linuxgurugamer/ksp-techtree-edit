@@ -27,7 +27,7 @@ namespace ksp_techtree_edit.Models
                 catch
                 {
                     ModName = "Unknown";
-                    Logger.Error("Couldn't auto-detect mod for {0}", value);
+                    Logger.Error("Part.Filename: " + "Couldn't auto-detect mod for {0}", value);
                 }
             }
         }
@@ -54,26 +54,37 @@ namespace ksp_techtree_edit.Models
 			PartName = name;
 		}
 
+		string GetLocalized(string str)
+		{
+			if (str != null &&str != "" && TechTreeViewModel.localizationDictionary != null)
+			{
+				 str = str.Trim();
+				for (int i = 0; i < str.Length; i++)
+				{
+					if (Char.IsWhiteSpace(str[i]))
+					{
+						str = str.Substring(0, i);
+						break;
+					}
+				}
+
+				if (TechTreeViewModel.localizationDictionary.ContainsKey(str))
+				{
+					TechTreeViewModel.localizationDictionary.TryGetValue(str, out string data);
+					return data;
+				}
+				else
+					return str;
+			}
+			else
+				return str;
+		}
         public Part( Part p)
         {
             PartName = p.PartName;
             Title = p.Title;
-
-			if (p.Description != null && p.Description != "" && TechTreeViewModel.localizationDictionary != null)
-			{
-				string str = p.Description.Trim();
-				if (str.IndexOf(' ') >= 0)
-					str = str.Substring(0, str.IndexOf(' '));
-				if (TechTreeViewModel.localizationDictionary.ContainsKey(str))
-				{
-					TechTreeViewModel.localizationDictionary.TryGetValue(str, out string data);
-					Description = data;
-				}
-				else
-					Description = str;
-			}
-			else
-				Description = p.Description;
+			Title = GetLocalized(p.Title);
+			Description = GetLocalized(p.Description);
 
 			Cost = p.Cost;
             TechRequired = p.TechRequired;

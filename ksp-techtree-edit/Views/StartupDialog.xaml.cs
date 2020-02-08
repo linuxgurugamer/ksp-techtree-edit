@@ -50,7 +50,7 @@ namespace ksp_techtree_edit.Views
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine(e.Message);
+				Console.WriteLine("StartupDialog.xaml.cs.StartupDialog: " + e.Message);
 				CanLoad = false;
 			}
 			InitializeComponent();
@@ -105,7 +105,7 @@ namespace ksp_techtree_edit.Views
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("StartupDialog.xaml.cs.Load: " + exception.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
                 CanLoad = true;
             }
         }
@@ -146,7 +146,7 @@ namespace ksp_techtree_edit.Views
 			}
 			catch (Exception exception)
 			{
-				MessageBox.Show(exception.Message,"", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("StartupDialog.xaml.cs.StartupDialog_NewStockTree: " + exception.Message,"", MessageBoxButton.OK, MessageBoxImage.Error);
 				CanLoad = true;
 			}
 		}

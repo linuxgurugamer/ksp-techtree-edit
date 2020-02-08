@@ -96,7 +96,7 @@ namespace ksp_techtree_edit.ViewModels
                 for (int i = idx; i < idx +3; i++)
                     str += Title[i];
                 return str;
-                return Title.Substring(0, 2); 
+                //return Title.Substring(0, 2); 
             } 
         }
         public string Description
