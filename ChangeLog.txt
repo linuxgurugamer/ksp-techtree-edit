@@ -16,3 +16,6 @@
 0.5.3
 	Added filter to not read the "zDeprecated" directories
 	Fixed title not always getting localized
+
+0.5.4
+	Fixed title getting truncated at first space when no localization file is found

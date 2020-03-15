@@ -56,25 +56,27 @@ namespace ksp_techtree_edit.Models
 
 		string GetLocalized(string str)
 		{
-			if (str != null &&str != "" && TechTreeViewModel.localizationDictionary != null)
+			if (str != null && str != "" && TechTreeViewModel.localizationDictionary != null)
 			{
-				 str = str.Trim();
+				var str2 = str.Trim();
 				for (int i = 0; i < str.Length; i++)
 				{
 					if (Char.IsWhiteSpace(str[i]))
 					{
-						str = str.Substring(0, i);
+						str2 = str2.Substring(0, i);
 						break;
 					}
 				}
 
-				if (TechTreeViewModel.localizationDictionary.ContainsKey(str))
+				if (TechTreeViewModel.localizationDictionary.ContainsKey(str2))
 				{
-					TechTreeViewModel.localizationDictionary.TryGetValue(str, out string data);
+					TechTreeViewModel.localizationDictionary.TryGetValue(str2, out string data);
 					return data;
 				}
 				else
-					return str;
+				{
+					return str.Trim();
+				}
 			}
 			else
 				return str;
