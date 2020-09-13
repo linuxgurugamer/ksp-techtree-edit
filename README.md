@@ -1,4 +1,4 @@
-TED - KSP Tech Tree Editor - v0.3
+TED - KSP Tech Tree Editor - v0.5.4
 =================
 
 Description
